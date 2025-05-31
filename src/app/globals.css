@@ -2,19 +2,29 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #131128;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter-sans);
+  --font-serif: var(--font-serif);
+}
+
+@layer base {
+  .nav-items {
+    @apply px-4 py-1.5 rounded-full  text-sm font-semibold dark:text-white/70 dark:hover:bg-white/10 dark:hover:text-white text-gray-900/70 hover:bg-gray-900/10 hover:text-gray-900 transition duration-300
+  }
+
+  .hero-rings {
+    @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-emerald-300/5 shadow-[0_0_80px_inset] shadow-emerald-300/5 -z-27
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #131128;
     --foreground: #ededed;
   }
 }
