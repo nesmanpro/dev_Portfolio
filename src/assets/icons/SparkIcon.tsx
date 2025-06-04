@@ -1,4 +1,5 @@
 import IconPropsType from "@/types/iconProps";
+import React from "react";
 
 export const SparkIcon: React.FC<IconPropsType> = (props) => (
   <svg

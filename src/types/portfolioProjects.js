@@ -1,10 +1,13 @@
-type portfolioProjectsType = {
+import { StaticImageData } from "next/image";
+
+type PortfolioProjectsType = {
     company: string;
     year: string;
     title: string,
-    results: string[],
+    results: { title: string }[]
+    ,
     link: string,
-    image: string,
+    image: StaticImageData | string,
 }
 
-export default portfolioProjectsType
+export default PortfolioProjectsType;

@@ -3,17 +3,17 @@ import IconPropsType from "@/types/iconProps";
 export const ArrowDown: React.FC<IconPropsType> = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
+    className="h-6 w-6"
     fill="none"
+    viewBox="0 0 24 24"
     stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    strokeWidth={2}
     {...props}
   >
-    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M12 5l0 14" />
-    <path d="M16 15l-4 4" />
-    <path d="M8 15l4 4" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M13 7l5 5m0 0l-5 5m5-5H6"
+    />
   </svg>
 );
