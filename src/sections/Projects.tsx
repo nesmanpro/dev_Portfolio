@@ -66,7 +66,7 @@ const portfolioProjects: PortfolioProjectsType[] = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-18 lg:pb-56">
+    <section id="project" className="pb-18 lg:pb-56">
       <div className="container">
         <SectionHeader
           eyebrow="Real-world Results"
@@ -78,9 +78,9 @@ export const ProjectsSection = () => {
           {portfolioProjects.map((project, index) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 max-w-xl md:pt-12 md:px-10 lg:flex lg:gap-6 lg:pr-0 lg:pt-16 lg:px-20 lg:max-w-[98%] sticky"
+              className="px-8 pt-8 max-w-xl md:pt-12 md:pl-10 lg:flex lg:gap-6 lg:pr-0 lg:pt-16 lg:pl-20 lg:max-w-[98%] sticky"
               style={{
-                top: `calc(64px + ${index * 40}px)`,
+                top: `calc(64px + ${index * 50}px)`,
               }}
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-10">
@@ -117,7 +117,7 @@ export const ProjectsSection = () => {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto object-cover"
+                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-full object-cover"
                   />
                 </div>
               </div>

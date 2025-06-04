@@ -1,3 +1,4 @@
+"use client";
 import JsIcon from "@/assets/icons/JavascriptIcon";
 import HTMLIcon from "@/assets/icons/Html5Icon";
 import CSSIcon from "@/assets/icons/Css3Icon";
@@ -11,9 +12,10 @@ import map from "@/assets/images/map.jpg";
 import Card from "@/components/Card";
 import SectionHeader from "@/components/SectionHeader";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import CardHeader from "@/components/CardHeader";
 import ToolboxItems from "@/components/ToolboxItems";
+import { motion } from "motion/react";
 
 const toolboxItems = [
   {
@@ -86,8 +88,10 @@ const hobbies = [
 ];
 
 export const AboutSection = () => {
+  const contRef = useRef(null);
+
   return (
-    <div className="container py-14 px-6">
+    <section id="about" className="container py-14 px-6">
       <SectionHeader
         eyebrow="About Me"
         title="A Glimpse Into My World"
@@ -115,11 +119,15 @@ export const AboutSection = () => {
               className=""
             />
 
-            <ToolboxItems items={toolboxItems} className="" />
+            <ToolboxItems
+              items={toolboxItems}
+              className=""
+              itemsWrapperClassName="animate-move-left [animation-duration:30s]"
+            />
             <ToolboxItems
               items={toolboxItems}
               className="mt-6"
-              itemsWrapperClassName="-translate-x-1/2"
+              itemsWrapperClassName="animate-move-right [animation-duration:45s]"
             />
           </Card>
         </div>
@@ -130,35 +138,39 @@ export const AboutSection = () => {
               subtitle="Explore my interests and hobbies beyond the digital realm."
             />
 
-            <div className="relative flex-1">
+            <div ref={contRef} className="relative flex-1">
               {hobbies.map((hobby) => (
-                <div
+                <motion.div
                   key={hobby.title}
-                  className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
+                  className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute cursor-grab active:cursor-grabbing"
                   style={{
                     left: hobby.left,
                     top: hobby.top,
                   }}
+                  drag
+                  dragConstraints={contRef}
                 >
                   <span className="font-medium text-gray-950">
                     {hobby.title}
                   </span>
                   <span>{hobby.emoji}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </Card>
           <Card className="h-[320px] relative z-0 md:col-span-2 lg:col-span-1">
             <Image
               src={map}
-              alt="Location my office"
-              className="h-full w-full object-cover"
+              alt="My location"
+              className="h-full w-full object-cover "
             />
             <div
               className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-            bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-900/20
+              rounded-full flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-900/20
             "
             >
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping-sm [animation-duration:1.5s]"></div>
               <Image
                 src={meMemoji}
                 alt="Myself as a memoji"
@@ -168,6 +180,6 @@ export const AboutSection = () => {
           </Card>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

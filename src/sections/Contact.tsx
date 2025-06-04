@@ -4,7 +4,7 @@ import grainImg from "@/assets/images/grain.webp";
 
 export const ContactSection = () => {
   return (
-    <div className="py-16 px-6 pt-12 container">
+    <section id="contact" className="py-16 px-6 pt-12 container">
       <div className="">
         <div className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 py-8 px-10 rounded-3xl text-center md:text-left relative overflow-hidden z-0">
           <div
@@ -33,6 +33,6 @@ export const ContactSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

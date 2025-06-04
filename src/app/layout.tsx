@@ -23,9 +23,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${calistoga.variable} font-serif antialiased`}
+        className={`${inter.variable} ${calistoga.variable} font-serif antialiased `}
       >
         {children}
       </body>
