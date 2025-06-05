@@ -1,9 +1,13 @@
+"use client";
 import { ArrowDown } from "@/assets/icons/ArrowDown";
 import React from "react";
 import avatarImg from "@/assets/icons/avatarIconBatman.png";
 import grainImg from "@/assets/images/grain.webp";
 import Image from "next/image";
 import HeroOrbitWrapper from "@/components/HeroOrbitWrapper";
+
+import BtnGlobal from "@/components/BtnGlobal";
+import TextAnimatedBtn from "@/components/animated/TextBtn";
 
 export const HeroSection = () => {
   return (
@@ -47,14 +51,23 @@ export const HeroSection = () => {
           </p>
         </div>
         <div className="flex flex-col items-center md:flex-row gap-3 justify-center mt-6">
-          <button className="inline-flex gap-2 items-center justify-center font-semibold h-11 w-50 px-4 rounded-lg border dark:border-white/15 border-gray-900/10 cursor-pointer">
-            <span>Explore My Work</span>
-            <ArrowDown className="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-down size-6" />
-          </button>
-          <button className="inline-flex gap-2 items-center justify-center font-semibold h-11 w-50 px-4 rounded-lg dark:bg-white dark:text-gray-900 text-white bg-gray-900 cursor-pointer">
-            <span>👋</span>
-            <span>Let&apos;s Connect</span>
-          </button>
+          <BtnGlobal className="relative">
+            <TextAnimatedBtn
+              initText={"Explore My Work"}
+              initIcon={ArrowDown}
+              secondText={"Let's fly together!"}
+              secondIcon={ArrowDown}
+            />
+          </BtnGlobal>
+
+          <BtnGlobal light className="relative">
+            <TextAnimatedBtn
+              initText={"Contact me!"}
+              initIcon={ArrowDown}
+              secondText={"Let's connect"}
+              secondAltIcon="👋"
+            />
+          </BtnGlobal>
         </div>
       </div>
     </section>

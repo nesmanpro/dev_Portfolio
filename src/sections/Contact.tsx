@@ -1,6 +1,9 @@
+"use client";
 import { ArrowDown } from "@/assets/icons/ArrowDown";
 import React from "react";
 import grainImg from "@/assets/images/grain.webp";
+import BtnGlobal from "@/components/BtnGlobal";
+import TextAnimatedBtn from "@/components/animated/TextBtn";
 
 export const ContactSection = () => {
   return (
@@ -25,10 +28,17 @@ export const ContactSection = () => {
               </p>
             </div>
             <div>
-              <button className="inline-flex text-white gap-1 bg-gray-900 border-1 border-gray-900 items-center px-6 h-12 rounded-xl w-max cursor-pointer">
-                <span className="font-semibold">Contact Me</span>
-                <ArrowDown className="size-4 -rotate-45" />
-              </button>
+              <BtnGlobal
+                dark
+                className="relative w-full md:w-fit min-w-[160px] h-12 rounded-xl font-semibold text-sm gap-2 mt-6 md:px-2 cursor-pointer"
+              >
+                <TextAnimatedBtn
+                  initText={"Contact Me"}
+                  initAltIcon="📡"
+                  secondText={"Get in touch!"}
+                  secondIcon={ArrowDown}
+                />
+              </BtnGlobal>
             </div>
           </div>
         </div>

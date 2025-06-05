@@ -1,3 +1,4 @@
+"use client";
 import PortfolioProjectsType from "@/types/portfolioProjects";
 import letsornotPic from "@/assets/images/portfolio/mb1.png";
 import workaholicPic from "@/assets/images/portfolio/mb2.png";
@@ -7,6 +8,8 @@ import { CheckIcon } from "@/assets/icons/CheckIcon";
 import { ArrowDown } from "@/assets/icons/ArrowDown";
 import SectionHeader from "@/components/SectionHeader";
 import Card from "@/components/Card";
+import BtnGlobal from "@/components/BtnGlobal";
+import TextAnimatedBtn from "@/components/animated/TextBtn";
 
 const portfolioProjects: PortfolioProjectsType[] = [
   {
@@ -106,10 +109,17 @@ export const ProjectsSection = () => {
                     ))}
                   </ul>
                   <a href={project.link} target="_blank">
-                    <button className="bg-white text-gray-950 h-10 w-full rounded-xl font-semibold text-sm inline-flex items-center justify-center gap-2 mt-6 cursor-pointer md:w-auto md:px-4 ">
-                      <span>View Live Site</span>
-                      <ArrowDown className="size-5 -rotate-45" />
-                    </button>
+                    <BtnGlobal
+                      light
+                      className="relative w-full md:w-fit min-w-[160px] h-10 rounded-xl font-semibold text-sm gap-2 mt-6 md:px-2"
+                    >
+                      <TextAnimatedBtn
+                        initText={"View Live Site"}
+                        // initIcon={ArrowDown}
+                        secondText={"Check it out!"}
+                        secondIcon={ArrowDown}
+                      />
+                    </BtnGlobal>
                   </a>
                 </div>
                 <div className="lg:relative">
