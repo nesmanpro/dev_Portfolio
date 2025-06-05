@@ -1,11 +1,10 @@
 import PortfolioProjectsType from "@/types/portfolioProjects";
-import letsornotPic from "@/assets/images/portfolio/PF3.jpg";
-import workaholicPic from "@/assets/images/portfolio/PF2.jpg";
-import nonamePic from "@/assets/images/portfolio/PF4.jpg";
+import letsornotPic from "@/assets/images/portfolio/mb1.png";
+import workaholicPic from "@/assets/images/portfolio/mb2.png";
+import nonamePic from "@/assets/images/portfolio/mb3.png";
 import Image from "next/image";
 import { CheckIcon } from "@/assets/icons/CheckIcon";
 import { ArrowDown } from "@/assets/icons/ArrowDown";
-import grainImg from "@/assets/images/grain.webp";
 import SectionHeader from "@/components/SectionHeader";
 import Card from "@/components/Card";
 
@@ -117,7 +116,7 @@ export const ProjectsSection = () => {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-full object-cover"
+                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-full object-cover object-left-top"
                   />
                 </div>
               </div>
