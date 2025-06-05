@@ -34,9 +34,9 @@ export const ContactSection = () => {
               >
                 <TextAnimatedBtn
                   initText={"Contact Me"}
-                  initAltIcon="📡"
+                  initIcon={ArrowDown}
                   secondText={"Get in touch!"}
-                  secondIcon={ArrowDown}
+                  secondAltIcon="📡"
                 />
               </BtnGlobal>
             </div>

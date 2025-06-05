@@ -44,7 +44,7 @@ export default function TextAnimatedBtn({
       >
         <span>{initText}</span>
 
-        {secondIcon !== undefined && InitComponent ? (
+        {initIcon !== undefined && InitComponent ? (
           <span>
             <InitComponent />
           </span>
